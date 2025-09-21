@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Hash": "qJYLARBY19/nlpICLBikP00S5X7eJn3c0/wFPQ9ezOg=",
+  "Source": "ProductApi",
+  "BasePath": "_content/ProductApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ProductApi/wwwroot",
+      "Source": "ProductApi",
+      "ContentRoot": "/home/billy_work/drive-1/Coding/Dev/Job Interview/Dotnet/3S software/ProductApi/wwwroot/",
+      "BasePath": "_content/ProductApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}
