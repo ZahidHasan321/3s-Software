@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "7vh17ZI3BBE=",
+  "success": true,
+  "projectFilePath": "/home/billy_work/drive-1/Coding/Dev/Job Interview/Dotnet/3S software/ProductApi/ProductApi.csproj",
+  "expectedPackageFiles": [
+    "/home/billy_work/.nuget/packages/microsoft.aspnetcore.openapi/9.0.8/microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
+    "/home/billy_work/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
