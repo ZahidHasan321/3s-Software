@@ -66,8 +66,8 @@ public class ProductRepository : IProductRepository
         }
     }
 
-    public async Task<bool> AnyByCategoryIdAsync(int categoryId)
+    public async Task<int> CountByCategoryIdAsync(int categoryId)
     {
-        return await _context.Products.AnyAsync(p => p.CategoryId == categoryId);
+        return await _context.Products.CountAsync(p => p.CategoryId == categoryId);
     }
 }

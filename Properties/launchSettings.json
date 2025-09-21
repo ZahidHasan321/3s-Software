@@ -7,11 +7,7 @@
       "launchBrowser": false,
       "applicationUrl": "http://localhost:5037",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "ConnectionStrings__DefaultConnection": "Host=pg-1ab1b09e-ainulhasan1999-7428.c.aivencloud.com;Database=defaultdb;Username=avnadmin;Password=AVNS_9wF3LxR7tYzKpXvQbN2sDc4uGmE5H;Port=15125;SslMode=Require",
-        "Jwt__Key": "B8d93f3b2aE7c9F0x1G2h4J6k8M0Q2s5U7w9Z1r3V5y7C9e1G4h6J8k0M2Q4s6U8",
-        "Jwt__Issuer": "https://localhost:7062",
-        "Jwt__Audience": "https://localhost:7062"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "https": {
@@ -20,11 +16,7 @@
       "launchBrowser": false,
       "applicationUrl": "https://localhost:7095;http://localhost:5037",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "ConnectionStrings__DefaultConnection": "Host=pg-1ab1b09e-ainulhasan1999-7428.c.aivencloud.com;Database=defaultdb;Username=avnadmin;Password=AVNS_9wF3LxR7tYzKpXvQbN2sDc4uGmE5H;Port=15125;SslMode=Require",
-        "Jwt__Key": "B8d93f3b2aE7c9F0x1G2h4J6k8M0Q2s5U7w9Z1r3V5y7C9e1G4h6J8k0M2Q4s6U8",
-        "Jwt__Issuer": "https://localhost:7062",
-        "Jwt__Audience": "https://localhost:7062"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
   }

@@ -37,23 +37,15 @@ public class CategoryService : ICategoryService
     public async Task<IEnumerable<CategoryResponseDto>> GetAllAsync()
     {
         var categories = await _categoryRepository.GetAllAsync();
-        
-        var result = new List<CategoryResponseDto>();
-        foreach (var category in categories)
+        var dtos = _mapper.Map<IEnumerable<CategoryResponseDto>>(categories);
+
+        foreach (var dto in dtos)
         {
-            var count = await _productRepository.AnyByCategoryIdAsync(category.Id);
-            result.Add(new CategoryResponseDto
-            {
-                Id = category.Id,
-                Name = category.Name,
-                Description = category.Description,
-                ProductCount = count ? 1 : 0, // Simplified count
-                CreatedAt = category.CreatedAt,
-                UpdatedAt = category.UpdatedAt
-            });
+            var count = await _productRepository.CountByCategoryIdAsync(dto.Id);
+            dto.ProductCount = count;
         }
 
-        return result;
+        return dtos;
     }
 
     public async Task<CategoryResponseDto?> GetByIdAsync(int id)
@@ -61,16 +53,10 @@ public class CategoryService : ICategoryService
         var category = await _categoryRepository.GetByIdAsync(id);
         if (category == null) return null;
 
-        var count = await _productRepository.AnyByCategoryIdAsync(id);
-        return new CategoryResponseDto
-        {
-            Id = category.Id,
-            Name = category.Name,
-            Description = category.Description,
-            ProductCount = count ? 1 : 0,
-            CreatedAt = category.CreatedAt,
-            UpdatedAt = category.UpdatedAt
-        };
+        var dto = _mapper.Map<CategoryResponseDto>(category);
+        dto.ProductCount = await _productRepository.CountByCategoryIdAsync(id);
+
+        return dto;
     }
 
     public async Task<CategoryResponseDto> UpdateAsync(int id, CategoryUpdateDto dto)
@@ -87,17 +73,10 @@ public class CategoryService : ICategoryService
         await _categoryRepository.UpdateAsync(existingCategory);
 
         var updatedCategory = await _categoryRepository.GetByIdAsync(id);
-        var count = await _productRepository.AnyByCategoryIdAsync(id);
-        
-        return new CategoryResponseDto
-        {
-            Id = updatedCategory!.Id,
-            Name = updatedCategory.Name,
-            Description = updatedCategory.Description,
-            ProductCount = count ? 1 : 0,
-            CreatedAt = updatedCategory.CreatedAt,
-            UpdatedAt = updatedCategory.UpdatedAt
-        };
+        var responseDto = _mapper.Map<CategoryResponseDto>(updatedCategory);
+        responseDto.ProductCount = await _productRepository.CountByCategoryIdAsync(id);
+
+        return responseDto;
     }
 
     public async Task DeleteAsync(int id)

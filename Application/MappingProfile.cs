@@ -21,6 +21,7 @@ public class MappingProfile : Profile
         CreateMap<CategoryCreateDto, Category>();
         CreateMap<CategoryUpdateDto, Category>()
             .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+        CreateMap<Category, CategoryResponseDto>();
 
         // User mappings (if needed)
         // CreateMap<UserRegisterDto, User>();
